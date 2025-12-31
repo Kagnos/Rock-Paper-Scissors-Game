@@ -17,7 +17,7 @@ function getHumanChoice() {
     } else if (humanChoice.toLowerCase() === "scissors" || humanChoice.toLowerCase() === "scissor") {
         return humanChoice = 2;
     } else {
-        console.log("player can't spell lmao");
+        return humanChoice = "player can't spell lmao";
     }
 }
 
@@ -28,5 +28,13 @@ let computerScore = 0;
 let humanScore = 0;
 
 function playRound(computerChoice, humanChoice) {
-
+    if (computerChoice === 0 && humanChoice === 1 || computerChoice === 1 && humanChoice === 2 || computerChoice === 2 && humanChoice === 1) {
+        console.log("You win!");
+    } else if (computerChoice === 0 && humanChoice === 2 || computerChoice === 1 && humanChoice === 0 || computerChoice === 2 && humanChoice === 1) {
+        console.log("You lose!");
+    } else {
+        console.log("It's a tie");
+    }
 }
+
+playRound(computerChoice, humanChoice);
